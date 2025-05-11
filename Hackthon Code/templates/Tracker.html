@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <style>
+        /* Smooth Fade-in Effect */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1.2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Header Slide-down Effect */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #1565c0;
+            color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-50px);
+            animation: slideDown 1s ease-in-out forwards;
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Logo Resized */
+        header img {
+            height: 50px; /* Adjusted to better fit as a logo */
+            width: auto; /* Maintains aspect ratio */
+            margin-right: 15px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1976d2;
+            padding: 15px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s;
+            margin: 10px;
+            border-radius: 8px;
+            background-color: #0d47a1;
+            font-weight: 500;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #1565c0;
+            transform: scale(1.05);
+        }
+
+        /* Calculator Container */
+        .calculator-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            color: #1565c0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus {
+            box-shadow: 0px 0px 8px rgba(21, 101, 192, 0.5);
+            border-color: #1976d2;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #1976d2, #0d47a1);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.4s ease, transform 0.2s ease;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(45deg, #0d47a1, #1976d2);
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .calculator-container {
+                width: 90%;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        footer {
+            text-align: center;
+            background-color: #060606;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="c1.jpeg" alt="Carbon Footprint Logo">
+        <h1>Carbon Footprint Tracker</h1>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="redirectToLogin()">Login / Sign in</button>
+            
+        </div>
+    </header>
+
+    <nav>
+        <a href="/"><button class="button">Home</button></a>
+        <a href="/Tracker"><button class="button">Tracker</button></a>
+        <a href="/About_us"><button class="button">About Us</button></a>
+        <a href="/AboutCarbonFootprint"><button class="button">About Carbon Footprint</button></a>
+    </nav>
+
+    <main>
+        <div class="calculator-container">
+            <h1>Carbon Footprint Calculator</h1>
+            <form action="/calculate" method="POST">
+                <h2>Home Energy</h2>
+                <div class="form-group">
+                    <label for="electricity">Electricity (kWh/month):</label>
+                    <input type="number" id="electricity" name="electricity" required>
+                </div>
+                <div class="form-group">
+                    <label for="gas">Natural Gas (therms/month):</label>
+                    <input type="number" id="gas" name="gas" required>
+                </div>
+                <div class="form-group">
+                    <label for="oil">Heating Oil (liters/month):</label>
+                    <input type="number" id="oil" name="oil" required>
+                </div>
+
+                <h2>Transportation</h2>
+                <div class="form-group">
+                    <label for="car_mileage">Car (km/month):</label>
+                    <input type="number" id="car_mileage" name="car_mileage" required>
+                </div>
+                <div class="form-group">
+                    <label for="bus_mileage">Bus (km/month):</label>
+                    <input type="number" id="bus_mileage" name="bus_mileage" required>
+                </div>
+                <div class="form-group">
+                    <label for="train_mileage">Train (km/month):</label>
+                    <input type="number" id="train_mileage" name="train_mileage" required>
+                </div>
+                <div class="form-group">
+                    <label for="plane_mileage">Plane (km/year):</label>
+                    <input type="number" id="plane_mileage" name="plane_mileage" required>
+                </div>
+
+                <h2>Food</h2>
+                <div class="form-group">
+                    <label for="meat">Meat meals (per week):</label>
+                    <input type="number" id="meat" name="meat" required>
+                </div>
+                <div class="form-group">
+                    <label for="vegetables">Vegetable meals (per week):</label>
+                    <input type="number" id="vegetables" name="vegetables" required>
+                </div>
+                <div class="form-group">
+                    <label for="processed_food">Processed food meals (per week):</label>
+                    <input type="number" id="processed_food" name="processed_food" required>
+                </div>
+
+                <button type="submit" class="submit-button">Calculate Footprint</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        This website is created by <b>Team Hexcoder</b>
+    </footer>
+</body>
+
+</html>

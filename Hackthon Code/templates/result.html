@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Carbon Footprint Results</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #1565c0;
+            color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 75px;
+            margin-right: 15px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1976d2;
+            padding: 15px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+            border-radius: 8px;
+            background-color: #0d47a1;
+            font-weight: 500;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Results Container */
+        .results-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #1565c0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .result-card {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .big-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .rating {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .rating.excellent {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .rating.good {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .rating.needs-improvement {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* Breakdown Section */
+        .breakdown {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .breakdown-item {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .results-container {
+                width: 90%;
+                padding: 20px;
+            }
+            .breakdown {
+                flex-direction: column;
+                align-items: center;
+            }
+            .breakdown-item {
+                min-width: 90%;
+            }
+            .button {
+                width: 90%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            background-color: #080808;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="c1.jpeg" alt="Carbon Footprint Logo">
+        <h1>Carbon Footprint Tracker</h1>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="redirectToLogin()">Login / Sign in</button>
+            
+        </div>
+    </header>
+
+    <nav>
+        <a href="/"><button class="button">Home</button></a>
+        <a href="/Tracker"><button class="button">Tracker</button></a>
+        <a href="/About_us"><button class="button">About Us</button></a>
+        <a href="/AboutCarbonFootprint"><button class="button">About Carbon Footprint</button></a>
+    </nav>
+
+    <main>
+        <div class="results-container">
+            <h1>Your Carbon Footprint Results</h1>
+            
+            <div class="result-card">
+                <h2>Total Carbon Footprint</h2>
+                <p class="big-number">{{ total_footprint }} kg CO2/year</p>
+                <p class="rating {{ rating|lower|replace(' ', '-') }}">{{ rating }}</p>
+                <p>{{ message }}</p>
+            </div>
+
+            <div class="breakdown">
+                <h2>Breakdown</h2>
+                <div class="breakdown-item">
+                    <h3>Home Energy</h3>
+                    <p>{{ home_energy }} kg CO2/year</p>
+                </div>
+                <div class="breakdown-item">
+                    <h3>Transportation</h3>
+                    <p>{{ transportation }} kg CO2/year</p>
+                </div>
+                <div class="breakdown-item">
+                    <h3>Food</h3>
+                    <p>{{ food }} kg CO2/year</p>
+                </div>
+            </div>
+
+            <a href="/Tracker" class="button">Calculate Again</a>
+        </div>
+    </main>
+
+    <footer>
+        This website is created by <b>Team Hexcoder</b>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Breakdown</title>
+        <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1565c0;
+            color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-50px);
+            animation: slideDown 1s ease-in-out forwards;
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        header img {
+            height: 75px;
+            margin-right: 15px;
+        }
+
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+        }
+
+        .auth-buttons button {
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: 500;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .login-btn { background-color: #0d47a1; }
+        .signup-btn { background-color: #1976d2; }
+
+        .login-btn:hover, .signup-btn:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1976d2;
+            padding: 15px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+            border-radius: 8px;
+            background-color: #0d47a1;
+            font-weight: 500;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1565c0;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Main Content */
+        main {
+            background-color: #e3f2fd;
+            padding: 30px;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main h1 {
+            text-align: left;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        /* Tracking Button */
+        .tracking-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 14px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #1976d2, #0d47a1);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.4s ease, transform 0.2s ease;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tracking-btn:hover {
+            background: linear-gradient(45deg, #0d47a1, #1976d2);
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="c1.jpeg" alt="Carbon Footprint Logo">
+        <h1>Carbon Footprint Tracker</h1>
+        <div class="auth-buttons">
+            <button class="login-btn" onclick="redirectToLogin()">Login / Sign in</button>
+            
+        </div>
+    </header>
+
+    <nav>
+        <a href="/"><button class="button">Home</button></a>
+        <a href="/Tracker"><button class="button">Tracker</button></a>
+        <a href="/About_us"><button class="button">About Us</button></a>
+        <a href="/AboutCarbonFootprint"><button class="button">About Carbon Footprint</button></a>
+    </nav>
+
+    <main>
+        <p><i>Carbon footprint is the total amount of greenhouse gases, mainly CO<sub>2</sub>, released due to human activities.
+        <br>
+        <b>Understanding and Minimizing Our Carbon Footprint: A Step towards Sustainable Living</b>
+<br><br>
+            <B>Introduction</b><br>
+            With the world in an age of quick industrialization and technological development, the term "carbon footprint" has come to be at the forefront of global environmental conversation. A carbon footprint is defined as the overall greenhouse gas (GHG) emissions—mostly carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N₂O)—resulting from human activities, quantified in CO₂-equivalent units. These emissions trap atmospheric heat, perpetuating climate change. With warming global temperatures, knowing the origin, effects, and mitigation for carbon footprints is essential in ensuring a sustainable world. The essay delves into the cause of carbon footprints, its effects, and pragmatic measures towards its reduction.
+            
+           <br><br><br>
+            
+            <b>Understanding Carbon Footprints</b><br>
+            A carbon footprint measures the environmental effect of personal activities, businesses, or countries. GHGs are released
+             from everyday activities like electricity consumption, transportation, food, and industrial production. For example, the combustion of fossil 
+             fuels emits CO₂, and farming emits methane. The sum of these emissions has a collective impact on altering Earth's climate balance. The Intergovernmental Panel on Climate Change 
+             (IPCC) estimates that human activities have induced around 1.1°C of global warming since pre-industrial times, highlighting the need to tackle carbon footprints urgently.
+            
+            <br><br><br>    
+             
+        <b>Moderate Sources of Carbon Emissions</b><br>
+            <br>1. <b>Energy Production</b>: Fossil fuels (coal, oil, natural gas) provide more than 75% of global GHG emissions. Electricity and heat production from power plants is the biggest contributor.
+           <br> 2. <b>Transportation</b>: Gasoline- and diesel-dependent vehicles release 14% of global CO₂. Aviation and shipping contribute further to this industry's influence.
+            <br>3. <b>Land Use and Agriculture</b>: Livestock farming generates methane, and synthetic fertilizers emit nitrous oxide. Deforestation for agriculture also reduces carbon-storing forests.
+            <br>4. <b>Industry</b>: Industry (cement, steel, plastics) and construction depend on energy-intensive technology, generating 21% of emissions.
+            <br>5. <b>Waste Management</b>: Landfills produce methane as organic waste is decomposed anaerobically.
+            <br><br>
+            These sectors interact with each other, with energy demand underpinning much of industrial and transportation activity.
+            
+           <br><br><br>
+            
+        <b>Impacts of Large Carbon Footprints</b><br>
+            The implications of uncontrolled emissions are severe: <br>
+           <br> - <b>Climate Change</b>: Global warming results in melting ice caps, sea-level rise, and more powerful hurricanes, droughts, and wildfires.
+           <br> - <b>Health Hazards</b>: Fossil fuel pollution causes respiratory ailments, and heatwaves boost mortality.
+           <br>- <b>Biodiversity Loss</b>: Ecosystems break down as species find it hard to keep up with swift climatic changes. Coral bleaching and habitat loss expose 1 million species to extinction.
+           <br>- <b>Economic Toll</b>: The World Bank predicts that climate change will push 132 million people into poverty by 2030 because of crop failures and costs related to disasters.
+            
+            <br><br><br>
+            
+            *Strategies to Reduce Carbon Footprints<br>
+            Curbing carbon emissions needs systemic reforms and personal responsibility. The following are primary strategies:
+            <br><br>
+            <ol>
+                <li><b> Shift to Renewable Energy</b><br>
+                Shifting from fossil fuels to solar, wind, and hydropower can de-carbonize energy systems. Governments need to encourage renewables with subsidies and tax credits. For instance, Denmark 
+                gets 50% of its electricity from wind power and is working towards 100% in 2030. People can install solar panels on rooftops or go for green energy plans.</li>
+                <br><br>
+                <li><b> Increase Energy Efficiency</b><br>
+                Decreasing energy consumption is just as important. Buildings retrofitted with insulation and LED bulbs reduce energy consumption by 30%. Smart thermostats and ENERGY STAR-certified appliances 
+                streamline usage. Firms can implement cogeneration systems to recycle waste heat.</li>
+                <br><br>
+                <li><b>  Sustainable Transportation</b><br><ul>
+                <li> Electric Vehicles (EVs): EVs emit 50% less emissions in their lifespan compared to gasoline vehicles. Expanding charging stations and recycling batteries is imperative.</li>
+                <li> Public Transit and Active Mobility: Investing in trains, buses, and bike lanes decreases private car dependency. Telecommuting and carpooling also decrease emissions.</li>
+                <li> Aviation Innovations: Hydrogen-powered aircraft and sustainable aviation fuels (SAFs) hold the potential for cleaner air travel.</li></li></ul>
+                <br><br>
+                <li><b>  Sustainable Agriculture and Diet</b><ul><br>
+                <li>Plant-Based Diets: Livestock generates 14.5% of global emissions. Plant-based food alternatives decrease methane production.</li>
+                <li>Regenerative Farming: Farming methods such as organic farming and crop rotation increase sequestration of carbon in soil.</li>
+                <li>Cutting Down on Food Waste: 8-10% of greenhouse gases are due to wasted food. It can be reduced by composting and efficient supply chain management.</li></li>
+            </ul><br><br>
+                <li><b> Reforestation and Carbon Offsetting</b><br>
+                Forests absorb 2.6 billion tons of CO₂ annually. Replanting trees and protecting existing forests (e.g., Amazon rainforest) are vital. Individuals and companies can purchase carbon offsets to fund renewable projects or reforestation, though this should complement—not replace—direct emission cuts.</li>
+                <br><br>
+                <li><b>Circular Economy and Waste Reduction</b><br>
+                Recycling reduces industrial emissions. Recycling aluminum conserves 95% of the energy used in virgin production. Minimalism, repair, and the avoidance of single-use plastics must be adopted by consumers.</li>
+                <br><br>
+                <li><b> Policy and Advocacy</b><br>
+                Carbon pricing (taxation or cap-and-trade systems) must be implemented by governments to encourage emission cuts. The Paris Agreement, endorsed by 196 countries, is intended to restrict warming to 1.5°C. People's movements can force policymakers to act on climate.</li>
+                <br><br>
+                <li><b> Individual Actions</b><br>
+                While systemic transformation takes top priority, personal decisions count: <ul>
+                <li>Cut home consumption by unplugging appliances and drying clothes on lines.</li>
+                <li>Opt for local, seasonal fruits and vegetables to reduce transport emissions.</li>
+                <li>Demand corporate sustainability and divest from fossil fuels.</li></li>
+                </ul></ol>
+            
+            <br><br><br>
+            
+            <b>Conclusion</b><br>
+            Cutting the carbon footprint of humanity is a shared imperative that requires innovation, policy change, and changing ways of life. <br>
+             Through the shift to clean energy, adopting sustainable lifestyles, and making institutions accountable, we can curb the most devastating
+              consequences of climate change. Each choice—installation of a solar panel or a bike ride—isadding up to making the planet healthier. The 
+              time to act is now; our decisions today will determine the legacy for the next generation.
+            </i></p>
+    </main>
+
+    <!-- Pie Chart Section -->
+    <div class="chart-container">
+        <h2>This Given Chart show the major Carbon Footprint Contributors</h2>
+        <canvas id="carbonChart"></canvas>
+    </div>
+
+    <footer>
+        This website is created by <b>Team Hexcoder</b>
+    </footer>
+
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Data for Pie Chart
+        const labels = ["Transportation", "Electricity", "Food Production", "Industry", "Other"];
+        const dataValues = [35, 25, 20, 15, 5]; // Percentage breakdown
+        const colors = ["#ff5733", "#ffc300", "#36a2eb", "#4caf50", "#8e44ad"];
+
+        // Create Pie Chart with animations and hover effects
+        new Chart(document.getElementById("carbonChart"), {
+            type: "pie",
+            data: {
+                labels: labels,
+                datasets: [{
+                    backgroundColor: colors,
+                    data: dataValues,
+                    borderColor: "#fff",
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: "bold"
+                            },
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                let value = tooltipItem.raw;
+                                return ` ${tooltipItem.label}: ${value}%`;
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
+</body>
+</html>
